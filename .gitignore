@@ -1,0 +1,39 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+config.local.php
+*.pem
+*.key
+*.pfx
+# Dependencies and generated output
+node_modules/
+vendor/
+.next/
+out/
+dist/
+public/build/
+*.tsbuildinfo
+# Runtime data and local tooling
+*.log
+*.sqlite
+*.sqlite3
+*.db
+uploads/**
+!uploads/**/
+!uploads/**/.gitkeep
+.git_backup*/
+.vscode/
+.idea/
+.agents/
+.DS_Store
+Thumbs.db
+/public/hot
+/storage/*.key
+/storage/app/private/*
+/storage/app/public/*
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+/bootstrap/cache/*.php
