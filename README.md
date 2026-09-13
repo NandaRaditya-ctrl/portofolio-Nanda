@@ -18,6 +18,18 @@ Kartu demo ada di bagian `/#business-demos`. Data layanan dan interaksi terdapat
 
 ## Fitur dalam source
 
+### Integrasi portofolio-v3 / DevJourney
+
+Menu Journey dan bagian Perjalanan Belajar membuka `/journey/index.html` pada domain yang sama. DevJourney menyediakan tautan kembali ke beranda dan demo UMKM. Roadmap, pencarian, filter teknologi, favorit, detail proyek, tema dan latihan frontend bulan 1–3 diambil dari versi statis portofolio-v3. PHP/Laravel tetap berupa tautan source; backend dan database tidak disalin.
+
+Untuk menyinkronkan ulang dari checkout lokal v3:
+
+```bash
+node scripts/sync-journey.mjs C:/laragon/www/portofolio-v3
+```
+
+Skrip hanya menyalin daftar aset publik yang ditentukan, melengkapi aset bersama, dan menyesuaikan navigasi. Tidak menyalin `.env`, `.vercel`, database, atau dependency. Snapshot aset tersimpan dalam Git sehingga tidak memerlukan checkout v3 saat deployment. Perubahan v3 berikutnya memerlukan sinkronisasi ulang.
+
 - Profil singkat, keahlian, dan daftar proyek nyata.
 - Tautan langsung ke repositori GitHub.
 - Antarmuka responsif dengan Framer Motion.

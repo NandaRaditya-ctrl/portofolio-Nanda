@@ -1,5 +1,13 @@
 # Validasi publikasi
 
+## Integrasi DevJourney — 13 September 2026
+
+- Navigasi beranda → Journey → demo UMKM dan tombol kembali dari proyek bulanan lolos pengujian Chrome.
+- Pencarian kasir, filter frontend, favorit, modal detail, tampilan grid dan penambahan tugas pada to-do list lolos.
+- Seluruh aset lokal yang dimuat selama tes mengembalikan respons sukses; tidak ada exception JavaScript.
+- Tampilan lebar 390px tidak memiliki overflow horizontal pada halaman DevJourney.
+- Sinkronisasi aset memakai daftar file eksplisit. Backend Laravel, database, dan konfigurasi privat tidak dipindahkan.
+
 ## Penambahan demo — 13 September 2026
 
 - `npm run lint`: lolos.

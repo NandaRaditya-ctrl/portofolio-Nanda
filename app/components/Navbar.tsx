@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { name: "Demo", href: "/#business-demos" },
-  { name: "Projects", href: "/#projects" },
+  { name: "Journey", href: "/journey/index.html" },
   { name: "Contact", href: "/#contact" },
 ];
 
@@ -28,13 +28,13 @@ export default function Navbar() {
         
         <div className="flex items-center gap-6">
           {links.map((link) => (
-            <Link
+            <a
               key={link.name}
               href={link.href}
               className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
             >
               {link.name}
-            </Link>
+            </a>
           ))}
         </div>
       </div>
