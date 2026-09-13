@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowUpRight, Snowflake, Utensils, Building2 } from "lucide-react";
 
 const demos = [
@@ -13,14 +12,14 @@ export default function BusinessDemos() {
     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Lihat seperti apa website<br />untuk usaha Anda.</h2>
     <p className="text-zinc-400 max-w-2xl leading-relaxed mb-10">Tiga eksplorasi website dengan alur yang bisa dicoba langsung. Seluruh merek, proyek, dan harga di bagian ini adalah contoh fiktif untuk demonstrasi, bukan pekerjaan klien.</p>
     <div className="grid gap-6">
-      {demos.map(({ icon: Icon, ...demo }, index) => <Link key={demo.slug} href={`/demo/${demo.slug}`} className="group grid md:grid-cols-[.9fr_1.1fr] rounded-2xl overflow-hidden border border-zinc-800 hover:border-zinc-500 transition-colors focus-visible:outline-2 focus-visible:outline-indigo-300">
+      {demos.map(({ icon: Icon, ...demo }, index) => <a key={demo.slug} href={`/demo/${demo.slug}`} data-preview-title={demo.name} className="group grid md:grid-cols-[.9fr_1.1fr] rounded-2xl overflow-hidden border border-zinc-800 hover:border-zinc-500 transition-colors focus-visible:outline-2 focus-visible:outline-indigo-300">
         <div className={`bg-gradient-to-br ${demo.color} relative min-h-52 p-8 flex flex-col justify-between`}>
           <div className="flex justify-between items-center"><span className="text-xs text-white/70 tracking-widest">KONSEP / 0{index + 1}</span><Icon className={demo.accent} size={30} /></div>
           <span className={`text-4xl font-bold tracking-tight ${demo.accent}`}>{demo.name}</span>
           <span className="text-[10px] text-white/70 tracking-[.2em]">{demo.type}</span>
         </div>
         <div className="p-7 sm:p-8 bg-zinc-900/40"><h3 className="text-xl font-semibold mb-3">{demo.title}</h3><p className="text-zinc-400 text-sm leading-relaxed">{demo.description}</p><div className="flex flex-wrap gap-2 my-5">{demo.tags.map(tag => <span key={tag} className="text-xs px-3 py-1 border border-zinc-700 rounded-full text-zinc-300">{tag}</span>)}</div><span className="inline-flex gap-2 items-center text-sm text-indigo-300">Buka demo interaktif <ArrowUpRight size={17} /></span></div>
-      </Link>)}
+      </a>)}
     </div>
   </section>;
 }

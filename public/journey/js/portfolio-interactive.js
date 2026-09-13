@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateScroll();
     }
     function showProject(index) {
-        activeProject = index;
+        activeProject = index; dialog.dataset.projectId = "proyek-" + (index + 1);
         const p = projects[index];
         document.querySelector('#dialog-month').textContent = p.month;
         document.querySelector('#dialog-title').textContent = p.title;

@@ -12,14 +12,19 @@ for (const file of [...files, 'shared/projects.css', 'shared/projects.js']) {
   const original = path.join(source, file.startsWith('shared/') ? 'public' : 'vercel-portfolio', file);
   let text = await readFile(original, 'utf8');
   if (file === 'bulan-3/script.js') text = text.replace('(todo, index)', '(todo)');
-  if (file === 'js/portfolio-interactive.js') text = text.replace('saved.has(id) ? saved.delete(id) : saved.add(id);', 'if (saved.has(id)) { saved.delete(id); } else { saved.add(id); }');
+  if (file === 'js/portfolio-interactive.js') {
+    text = text.replace('saved.has(id) ? saved.delete(id) : saved.add(id);', 'if (saved.has(id)) { saved.delete(id); } else { saved.add(id); }');
+    text = text.replace('activeProject = index;', 'activeProject = index; dialog.dataset.projectId = "proyek-" + (index + 1);');
+  }
   if (file.endsWith('.html')) text = text.replaceAll('"/shared/', '"/journey/shared/');
   if (file === 'index.html') {
+    text = text.replace('</head>', '<link rel="stylesheet" href="/project-preview.css"></head>');
+    text = text.replace('</body>', '<script src="/project-preview.js" defer></script></body>');
     text = text.replace('<div class="nav-links">', '<div class="nav-links"><a href="/" class="nav-btn">← Portofolio Utama</a><a href="/#business-demos" class="nav-btn">Demo UMKM</a>');
     text = text.replaceAll('href="css/', 'href="/journey/css/').replaceAll('src="js/', 'src="/journey/js/').replaceAll('href="bulan-', 'href="/journey/bulan-');
     text = text.replace(/<a href="#top" data-backend-project="true"[^>]*>.*?<\/a>/g, `<a href="${repo}" class="project-btn">Lihat source PHP/Laravel ↗</a>`);
     text = text.replace('Versi Vercel menampilkan portofolio interaktif.', 'DevJourney adalah bagian dari portofolio Nanda. Proyek HTML bulan 1–3 dapat dicoba langsung; proyek lainnya tersedia sebagai source code.');
-    text = text.replaceAll('target="_blank"', 'target="_blank" rel="noopener noreferrer"');
+    text = text.replaceAll('target="_blank"', '');
   }
   if (file === 'shared/projects.js') {
     text = text.replace(/const links=\[.*?\];/, "const links=['/journey/bulan-1/index.html','/journey/bulan-2/index.html','/journey/bulan-3/index.html'];");

@@ -16,6 +16,8 @@ Semua merek, harga, dan proyek demo fiktif, bukan pekerjaan klien. Formulir hany
 
 Kartu demo ada di bagian `/#business-demos`. Data layanan dan interaksi terdapat di `app/demo/[slug]/site.tsx`, gaya demo di `site.module.css`, dan kartu portofolio di `app/components/BusinessDemos.tsx`.
 
+Klik biasa pada demo UMKM dan proyek frontend DevJourney membuka panel preview di halaman portofolio yang sama. Panel mendukung tombol kembali, Escape, dan pengembalian fokus. Demo di dalam panel tetap interaktif. Tanpa JavaScript, tautan tetap membuka halaman proyek langsung. Proyek PHP/Laravel tetap memiliki tautan source karena backend belum dipublikasikan. Implementasi bersama ada di `public/project-preview.js` dan `public/project-preview.css`.
+
 ## Fitur dalam source
 
 ### Integrasi portofolio-v3 / DevJourney

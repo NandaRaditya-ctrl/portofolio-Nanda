@@ -1,5 +1,13 @@
 # Validasi publikasi
 
+## Preview proyek di dalam portofolio — 13 September 2026
+
+- Chrome: tombol proyek frontend dan tautan dari dialog detail membuka panel di halaman yang sama tanpa tab baru.
+- To-do list dan kalkulator AC (4 × Rp85.000 = Rp340.000) tetap berfungsi di frame.
+- Escape dari dalam frame, tombol kembali, dan pengembalian fokus ke kartu proyek lolos.
+- Panel diperiksa pada lebar 390px; toolbar kembali tetap terlihat.
+- URL preview dibatasi ke tiga demo bisnis dan proyek frontend bulan 1–3 pada origin yang sama. Backend PHP/Laravel tidak diklaim sebagai demo aktif.
+
 ## Integrasi DevJourney — 13 September 2026
 
 - Navigasi beranda → Journey → demo UMKM dan tombol kembali dari proyek bulanan lolos pengujian Chrome.
