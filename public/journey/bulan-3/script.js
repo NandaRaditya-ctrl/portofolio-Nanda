@@ -28,7 +28,7 @@ function saveToLocalStorage() {
 // Fungsi untuk merender daftar To-Do
 function renderTodos() {
     todoList.innerHTML = '';
-    
+
     // Filter array berdasarkan status saat ini
     let filteredTodos = todos;
     if (currentFilter === 'pending') {
@@ -79,7 +79,7 @@ function renderTodos() {
 // Event: Menambah Tugas Baru
 todoForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Mencegah reload halaman
-    
+
     const text = todoInput.value.trim();
     if (text !== '') {
         const newTodo = {
@@ -87,7 +87,7 @@ todoForm.addEventListener('submit', (e) => {
             text: text,
             completed: false
         };
-        
+
         if (todos.length >= 200) todos.shift();
         todos.push(newTodo);
         saveToLocalStorage();
@@ -105,7 +105,7 @@ todoList.addEventListener('click', (e) => {
         saveToLocalStorage();
         renderTodos();
     }
-    
+
     // Jika checkbox diklik
     if (e.target.classList.contains('todo-checkbox')) {
         const id = e.target.dataset.id;
@@ -132,7 +132,7 @@ filterBtns.forEach(btn => {
         filterBtns.forEach(b => b.classList.remove('active'));
         // Tambahkan ke tombol yang diklik
         btn.classList.add('active');
-        
+
         // Ubah state filter dan render ulang
         currentFilter = btn.dataset.filter;
         renderTodos();

@@ -27,6 +27,6 @@ for (const file of [...files, 'shared/projects.css', 'shared/projects.js']) {
   }
   const destination = path.join(root, 'public/journey', file);
   await mkdir(path.dirname(destination), { recursive: true });
-  await writeFile(destination, text);
+  await writeFile(destination, text.replace(/[\t ]+\r?$/gm, '').trimEnd() + '\n');
 }
 console.log('Synced DevJourney and three frontend demos into public/journey.');

@@ -455,23 +455,23 @@ footer {
     .timeline::before {
         left: 30px;
     }
-    
+
     .timeline-item {
         justify-content: flex-end;
     }
-    
+
     .timeline-item:nth-child(even) {
         justify-content: flex-end;
     }
-    
+
     .timeline-dot {
         left: 30px;
     }
-    
+
     .timeline-item:hover .timeline-dot {
         transform: translateX(-50%) scale(1.2);
     }
-    
+
     .pulse-dot {
         animation: pulseMobile 2s infinite;
     }
@@ -481,11 +481,11 @@ footer {
         70% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 10px rgba(255, 0, 128, 0); }
         100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(255, 0, 128, 0); }
     }
-    
+
     .timeline-content {
         width: calc(100% - 70px);
     }
-    
+
     .hero h1 {
         font-size: 2.5rem;
     }
