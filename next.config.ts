@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  devIndicators: false,
   outputFileTracingExcludes: { "/*": ["./.demo-runtime/**/*"] },
   async rewrites() {
     const backend = process.env.DEMO_BACKEND_URL || (process.env.NODE_ENV === "development" ? "http://127.0.0.1:3118" : "");
