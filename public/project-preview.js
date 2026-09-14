@@ -3,7 +3,7 @@
   if (window.__portfolioPreview) return;
   window.__portfolioPreview = true;
   let dialog, frame, opener, timer, previousOverflow;
-  const allowed = path => /^\/journey\/bulan-[123]\/index\.html$/.test(path) || /^\/demo\/(sejuk|saji|ruang)$/.test(path);
+  const allowed = path => /^\/journey\/bulan-[123]\/index\.html$/.test(path) || /^\/demo\/(sejuk|saji|ruang)$/.test(path) || /^\/bulan-[4-7]\/index\.php$/.test(path) || /^\/(inventaris|booking|pkl)(\/dashboard)?$/.test(path);
   function close() { dialog.close(); }
   function create() {
     dialog = document.createElement('dialog');
@@ -11,6 +11,8 @@
     dialog.setAttribute('aria-labelledby', 'portfolio-preview-title');
     dialog.innerHTML = '<header class="portfolio-preview-bar"><div><span>PREVIEW PROYEK</span><h2 id="portfolio-preview-title"></h2></div><button type="button" class="portfolio-preview-close">← Kembali ke portofolio</button></header><p class="portfolio-preview-status" role="status">Memuat proyek…</p><iframe title="Preview proyek" sandbox="allow-scripts allow-same-origin allow-forms" referrerpolicy="same-origin"></iframe>';
     document.body.append(dialog);
+    const help = document.createElement('p'); help.className = 'portfolio-preview-help'; help.hidden = true;
+    dialog.querySelector('header').after(help);
     frame = dialog.querySelector('iframe');
     dialog.querySelector('button').addEventListener('click', close);
     dialog.addEventListener('close', () => {
@@ -52,8 +54,21 @@
     dialog.querySelector('h2').textContent = title;
     frame.title = `Demo ${title}`;
     const status = dialog.querySelector('[role="status"]'); status.textContent = 'Memuat proyek…'; status.hidden = false;
+    const help = dialog.querySelector('.portfolio-preview-help');
+    const native = /^\/bulan-([567])\//.exec(url.pathname);
+    const laravel = /^\/(inventaris|booking|pkl)/.test(url.pathname);
+    help.hidden = !native && !laravel && !url.pathname.startsWith('/bulan-4/');
+    help.textContent = native ? `Akun demo: ${native[1] === '7' ? 'admin@sembako.com' : 'admin@perpustakaan.com'} · Password: admin123. Gunakan data contoh.` : laravel ? 'Akun demo: demo@portfolio.test · Password: DemoPortfolio2026! · Gunakan data contoh.' : 'Demo lokal. Gunakan data contoh; perubahan tersimpan di lingkungan demo terpisah.';
     previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
-    frame.src = url.href; dialog.showModal(); dialog.querySelector('button').focus();
+    dialog.dataset.previewUrl = url.href;
+    frame.src = 'about:blank'; dialog.showModal(); dialog.querySelector('button').focus();
+    if (native || laravel || url.pathname.startsWith('/bulan-4/')) {
+      fetch('/api/demo-status').then(response => response.json()).then(data => {
+        if (!dialog.open || dialog.dataset.previewUrl !== url.href) return;
+        if (data.available) { frame.src = url.href; }
+        else { clearTimeout(timer); status.textContent = 'Demo server sedang tidak aktif. Kembali ke portofolio dan coba lagi setelah pengelola mengaktifkannya.'; }
+      }).catch(() => { if (dialog.open) { clearTimeout(timer); status.textContent = 'Tidak dapat menghubungi demo server. Silakan coba lagi.'; } });
+    } else { frame.src = url.href; }
     timer = setTimeout(() => { status.textContent = 'Proyek belum selesai dimuat. Anda dapat kembali dan mencoba lagi.'; }, 15000);
   });
 })();

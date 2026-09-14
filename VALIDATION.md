@@ -1,5 +1,13 @@
 # Validasi publikasi
 
+## Backend demo — 14 September 2026
+
+- Proyek 4–11 dibuka dalam frame tanpa tab baru; buku tamu berhasil menyimpan pesan contoh.
+- Login perpustakaan 5–6, kasir 7, inventaris 8 lolos; tahap 9, booking 10, dan PKLFinder 11 terbuka tanpa halaman error.
+- Database latihan MariaDB dan SQLite berada di `.demo-runtime`, terpisah dari data sumber. Akun demo ditampilkan pada panel.
+- Aset build inventaris dilengkapi dan proxy loopback dipercaya agar navigasi Laravel kembali melalui portofolio.
+- Backend belum dipublikasikan; batas pengujian dan cara menjalankan tersedia di `BACKEND-DEMO.md`.
+
 ## Preview proyek di dalam portofolio — 13 September 2026
 
 - Chrome: tombol proyek frontend dan tautan dari dialog detail membuka panel di halaman yang sama tanpa tab baru.

@@ -16,13 +16,13 @@ Semua merek, harga, dan proyek demo fiktif, bukan pekerjaan klien. Formulir hany
 
 Kartu demo ada di bagian `/#business-demos`. Data layanan dan interaksi terdapat di `app/demo/[slug]/site.tsx`, gaya demo di `site.module.css`, dan kartu portofolio di `app/components/BusinessDemos.tsx`.
 
-Klik biasa pada demo UMKM dan proyek frontend DevJourney membuka panel preview di halaman portofolio yang sama. Panel mendukung tombol kembali, Escape, dan pengembalian fokus. Demo di dalam panel tetap interaktif. Tanpa JavaScript, tautan tetap membuka halaman proyek langsung. Proyek PHP/Laravel tetap memiliki tautan source karena backend belum dipublikasikan. Implementasi bersama ada di `public/project-preview.js` dan `public/project-preview.css`.
+Klik biasa pada demo UMKM dan proyek frontend DevJourney membuka panel preview di halaman portofolio yang sama. Panel mendukung tombol kembali, Escape, dan pengembalian fokus. Demo di dalam panel tetap interaktif. Tanpa JavaScript, tautan tetap membuka halaman proyek langsung. Proyek PHP/Laravel juga dibuka dalam panel ketika backend demo aktif; lihat [BACKEND-DEMO.md](BACKEND-DEMO.md). Implementasi bersama ada di `public/project-preview.js` dan `public/project-preview.css`.
 
 ## Fitur dalam source
 
 ### Integrasi portofolio-v3 / DevJourney
 
-Menu Journey dan bagian Perjalanan Belajar membuka `/journey/index.html` pada domain yang sama. DevJourney menyediakan tautan kembali ke beranda dan demo UMKM. Roadmap, pencarian, filter teknologi, favorit, detail proyek, tema dan latihan frontend bulan 1–3 diambil dari versi statis portofolio-v3. PHP/Laravel tetap berupa tautan source; backend dan database tidak disalin.
+Menu Journey dan bagian Perjalanan Belajar membuka `/journey/index.html` pada domain yang sama. DevJourney menyediakan tautan kembali ke beranda dan demo UMKM. Roadmap, pencarian, filter teknologi, favorit, detail proyek, tema dan latihan frontend bulan 1–3 diambil dari versi statis portofolio-v3. PHP/Laravel dihubungkan melalui proxy ke lingkungan demo terpisah; lihat [BACKEND-DEMO.md](BACKEND-DEMO.md).
 
 Untuk menyinkronkan ulang dari checkout lokal v3:
 
