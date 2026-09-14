@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekolah Harapan Bangsa | Bulan 2 - CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/journey/shared/projects.css">
+</head>
+<body>
+
+    <!-- Navbar using Flexbox -->
+    <header class="navbar">
+        <div class="logo">
+            <h2>SHB.</h2>
+        </div>
+        <nav class="nav-links" id="school-nav">
+            <a href="#home">Beranda</a>
+            <a href="#about">Tentang</a>
+            <a href="#facilities">Fasilitas</a>
+            <a href="#contact" class="btn-primary">Informasi Sekolah</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="school-nav">
+            <span>&#9776;</span>
+        </button>
+    </header>
+
+    <!-- Hero Section using Flexbox -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Membentuk Generasi <span class="highlight">Masa Depan</span></h1>
+            <p>Sekolah Harapan Bangsa hadir untuk memberikan pendidikan berkualitas tinggi dengan fasilitas modern dan kurikulum terpadu.</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn-secondary">Pelajari Lebih Lanjut</a>
+                <a href="#contact" class="btn-primary">Hubungi Kami</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="image-placeholder">
+                <p>🎓</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="facilities-section"><div class="section-header"><h2>Tentang sekolah</h2><p>Halaman demonstrasi sekolah untuk latihan CSS responsif. Pelajari tata letak Flexbox, Grid, dan navigasi yang dapat digunakan di HP.</p></div><details><summary>Apa yang dipelajari dalam proyek ini?</summary><p>Struktur halaman, kartu fasilitas, menu navigasi, dan penyesuaian tampilan pada berbagai ukuran layar.</p></details></section>
+    <!-- Fasilitas Section using CSS Grid -->
+    <section id="facilities" class="facilities-section">
+        <div class="section-header">
+            <h2>Fasilitas Unggulan</h2>
+            <p>Kami menyediakan lingkungan belajar terbaik untuk siswa.</p>
+        </div>
+
+        <div class="facilities-grid">
+            <div class="facility-card">
+                <div class="icon">💻</div>
+                <h3>Lab Komputer</h3>
+                <p>Dilengkapi dengan PC generasi terbaru dan internet berkecepatan tinggi.</p>
+            </div>
+            <div class="facility-card">
+                <div class="icon">📚</div>
+                <h3>Perpustakaan</h3>
+                <p>Koleksi ribuan buku fisik maupun digital untuk referensi belajar.</p>
+            </div>
+            <div class="facility-card">
+                <div class="icon">🔬</div>
+                <h3>Lab Sains</h3>
+                <p>Peralatan praktikum lengkap untuk fisika, kimia, dan biologi.</p>
+            </div>
+            <div class="facility-card">
+                <div class="icon">⚽</div>
+                <h3>Lapangan Olahraga</h3>
+                <p>Fasilitas olahraga luas untuk basket, voli, dan futsal.</p>
+            </div>
+            <div class="facility-card">
+                <div class="icon">🎨</div>
+                <h3>Ruang Seni</h3>
+                <p>Tempat mengasah kreativitas dalam bermusik dan melukis.</p>
+            </div>
+            <div class="facility-card">
+                <div class="icon">🏥</div>
+                <h3>UKS & Klinik</h3>
+                <p>Layanan kesehatan prima yang siaga selama jam sekolah.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>Sekolah Harapan Bangsa</h2>
+                <p>Mencerdaskan Kehidupan Bangsa dengan Ilmu dan Akhlak.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Tautan Cepat</h3>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#facilities">Fasilitas</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Kontak</h3>
+                <p>📍 Jl. Pendidikan No. 123, Jakarta</p>
+                <p>📞 (021) 1234-5678</p>
+                <p>✉️ info@shb.sch.id</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sekolah Harapan Bangsa. Proyek Bulan 2 CSS.</p>
+        </div>
+    </footer>
+
+<script src="/journey/shared/projects.js" defer></script>
+</body>
+</html>

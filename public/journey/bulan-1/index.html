@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Pribadi - Bulan 1</title>
+<link rel="stylesheet" href="/journey/shared/projects.css">
+</head>
+<body>
+
+    <!-- Header dengan Semantic HTML -->
+    <header>
+        <h1>Nanda Raditya</h1>
+        <p>Calon Fullstack Web Developer</p>
+        <nav>
+            <ul>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#pendidikan">Pendidikan</a></li>
+                <li><a href="#keterampilan">Keterampilan</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <!-- Section Profil -->
+        <section id="profil">
+            <h2>Tentang Saya</h2>
+            <p>Halo! Saya adalah seorang pemula yang sedang belajar Web Development. Ini adalah proyek pertama saya di Bulan ke-1 menggunakan <strong>HTML Dasar</strong> dan <em>Semantic HTML</em>.</p>
+        </section>
+
+        <!-- Section Pendidikan menggunakan Table -->
+        <section id="pendidikan">
+            <h2>Riwayat Pendidikan</h2>
+            <table border="1" cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Tingkat</th>
+                        <th>Nama Institusi</th>
+                        <th>Tahun Lulus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SMK</td>
+                        <td>SMK Negeri 6 Malang</td>
+                        <td>2028</td>
+                    </tr>
+                    <tr>
+                        <td>SMP</td>
+                        <td>SMP Negeri 21 Malang</td>
+                        <td>2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <br>
+
+        <!-- Section Keterampilan menggunakan List -->
+        <section id="keterampilan">
+            <h2>Keterampilan (Skills)</h2>
+            <ul>
+                <li>Memahami Struktur HTML</li>
+                <li>Menggunakan Semantic HTML (header, main, section, footer)</li>
+                <li>Membuat Form dan Tabel</li>
+            </ul>
+        </section>
+
+        <br>
+
+        <!-- Section Kontak menggunakan Form -->
+        <section id="kontak">
+            <h2>Hubungi Saya</h2>
+            <p>Formulir latihan HTML — tidak mengirim pesan.</p><form data-demo-form action="#" method="get">
+                <div>
+                    <label for="nama">Nama Lengkap:</label><br>
+                    <input type="text" id="nama" name="nama" maxlength="100" required placeholder="Masukkan nama Anda">
+                </div>
+                <br>
+                <div>
+                    <label for="email">Alamat Email:</label><br>
+                    <input type="email" id="email" name="email" required placeholder="contoh@email.com">
+                </div>
+                <br>
+                <div>
+                    <label for="pesan">Pesan Anda:</label><br>
+                    <textarea id="pesan" name="pesan" maxlength="2000" rows="4" cols="30" required placeholder="Tulis pesan Anda di sini..."></textarea>
+                </div>
+                <br>
+                <div>
+                    <label>Jenis Kelamin:</label><br>
+                    <input type="radio" id="pria" name="gender" value="pria">
+                    <label for="pria">Pria</label>
+                    <input type="radio" id="wanita" name="gender" value="wanita">
+                    <label for="wanita">Wanita</label>
+                </div>
+                <br>
+                <div>
+                    <button type="submit">Kirim Pesan</button>
+                    <button type="reset">Hapus Isian</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <br><hr>
+
+    <!-- Footer dengan Semantic HTML -->
+    <footer>
+        <p>&copy; 2026 Nanda. Dibuat sebagai Proyek Bulan 1 - HTML.</p>
+    </footer>
+
+<script src="/journey/shared/projects.js" defer></script>
+</body>
+</html>

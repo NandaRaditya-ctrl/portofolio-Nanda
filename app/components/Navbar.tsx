@@ -3,19 +3,16 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
-
-const navItems = [
-  { name: "S", path: "/" }, // S used as logo placeholder, maybe change to name initial
-];
 
 const links = [
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
+  { name: "Demo", href: "/#business-demos" },
+  { name: "Journey", href: "/journey/index.html" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  if (pathname.startsWith("/demo/")) return null;
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
@@ -31,13 +28,13 @@ export default function Navbar() {
         
         <div className="flex items-center gap-6">
           {links.map((link) => (
-            <Link
+            <a
               key={link.name}
               href={link.href}
               className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
             >
               {link.name}
-            </Link>
+            </a>
           ))}
         </div>
       </div>
